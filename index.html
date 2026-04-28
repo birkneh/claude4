@@ -11,13 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg0:#000; --bg1:#0f0f0f; --bg2:#1a1a1a; --bg3:#242424; --bg4:#2e2e2e;
-  --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.16);
-  --text:#fff; --text2:#a0a0a0; --text3:#555;
-  --accent:#FF6B2B; --accent-dim:rgba(255,107,43,0.12);
-  --green:#30D158; --green-dim:rgba(48,209,88,0.12);
-  --blue:#0A84FF; --blue-dim:rgba(10,132,255,0.12);
-  --yellow:#FFD60A; --r:14px; --r-sm:10px; --r-xs:7px;
+  --bg0:#f0f0f5; --bg1:#ffffff; --bg2:#f5f5f8; --bg3:#eaeaef; --bg4:#dcdce2;
+  --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.13);
+  --text:#111114; --text2:#666672; --text3:#aaaabc;
+  --accent:#FF6B2B; --accent-dim:rgba(255,107,43,0.10);
+  --green:#1e9c47; --green-dim:rgba(30,156,71,0.10);
+  --blue:#0A84FF; --blue-dim:rgba(10,132,255,0.10);
+  --yellow:#b07c00; --r:14px; --r-sm:10px; --r-xs:7px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{height:100%;background:var(--bg0)}
@@ -97,7 +97,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg0);color:va
 .summary-stat{display:flex;flex-direction:column;align-items:center}
 .summary-val{font-size:18px;font-weight:800;color:var(--text)}
 .summary-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
-.pr-pill{display:inline-flex;align-items:center;gap:4px;background:var(--yellow);color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;margin-top:10px;text-transform:uppercase;letter-spacing:.5px}
+.pr-pill{display:inline-flex;align-items:center;gap:4px;background:#b07c00;color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;margin-top:10px;text-transform:uppercase;letter-spacing:.5px}
 
 /* exit session button */
 .exit-session-btn{width:100%;padding:16px;border-radius:var(--r);border:1px solid var(--border2);background:var(--bg2);color:var(--text2);font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:background .15s}
@@ -116,7 +116,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg0);color:va
 .set-input::placeholder{color:var(--text3);font-size:12px;font-weight:400}
 .set-input.pr-field{border-color:var(--yellow)!important;background:rgba(255,214,10,.07)!important}
 .set-input.done-field{opacity:.5}
-.pr-badge{position:absolute;top:-6px;right:-4px;font-size:8px;font-weight:800;background:var(--yellow);color:#000;padding:1px 4px;border-radius:4px;display:none;text-transform:uppercase}
+.pr-badge{position:absolute;top:-6px;right:-4px;font-size:8px;font-weight:800;background:#b07c00;color:#fff;padding:1px 4px;border-radius:4px;display:none;text-transform:uppercase}
 .pr-badge.show{display:block}
 .vol-cell{font-size:11px;font-weight:600;color:var(--text3);text-align:center}
 .chk-btn{width:32px;height:32px;border-radius:50%;border:2px solid var(--border2);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;flex-shrink:0;-webkit-appearance:none}
@@ -136,14 +136,14 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg0);color:va
 .rest-skip{font-size:12px;font-weight:600;color:var(--text3);background:none;border:none;cursor:pointer;padding:4px 8px;border-radius:6px;font-family:'Inter',sans-serif}
 
 /* BOTTOM BAR */
-.bottom-bar{position:absolute;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg0) 80%,transparent);display:flex;gap:10px}
+.bottom-bar{position:absolute;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg0) 75%,rgba(240,240,245,0));display:flex;gap:10px}
 .btn-finish{flex:1;padding:16px;border-radius:var(--r);background:var(--accent);border:none;color:#fff;font-size:16px;font-weight:800;font-family:'Inter',sans-serif;letter-spacing:-.3px;cursor:pointer;transition:opacity .15s}
 .btn-finish:active{opacity:.85;transform:scale(.99)}
 .btn-reset{padding:16px 18px;border-radius:var(--r);border:1px solid var(--border2);background:var(--bg2);color:var(--text2);font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer}
 .btn-reset:active{background:var(--bg3)}
 
 /* ═══════════════════════════════ MODALS ═══════════════════════════════ */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;display:flex;flex-direction:column;justify-content:flex-end;backdrop-filter:blur(4px)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;display:flex;flex-direction:column;justify-content:flex-end;backdrop-filter:blur(4px)}
 .overlay.hidden{display:none}
 .sheet{background:var(--bg1);border-radius:20px 20px 0 0;max-height:92dvh;display:flex;flex-direction:column;overflow:hidden}
 .sheet-handle{width:40px;height:4px;background:var(--bg4);border-radius:2px;margin:12px auto 0}
@@ -175,7 +175,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg0);color:va
 
 /* ─── HISTORY SHEET ─── */
 .history-empty{text-align:center;padding:40px 20px;color:var(--text2);font-size:14px}
-.history-session{background:var(--bg2);border-radius:var(--r-sm);padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:background .15s}
+.history-session{background:var(--bg2);border-radius:var(--r-sm);padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:background .15s;border:1px solid var(--border)}
 .history-session:active{background:var(--bg3)}
 .hs-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .hs-date{font-size:14px;font-weight:700}
